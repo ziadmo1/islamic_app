@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/home_page.dart';
+import 'package:islamic_app/home_screen/hadeth_tab/hadeth_tab_details.dart';
+import 'package:islamic_app/home_screen/home_page.dart';
+import 'package:islamic_app/home_screen/quran_tab/quran_tab_details.dart';
+import 'package:islamic_app/my_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: HomePage.routeName,
       routes: {
-        HomePage.routeName : (_)=>HomePage()
+        HomePage.routeName: (_) => HomePage(),
+        QuranDetails.routeName: (_) => QuranDetails(),
+        HadethTabDetails.routeName: (_) => HadethTabDetails()
       },
+      theme: MyThemeData.lightTheme,
     );
   }
 }

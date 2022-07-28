@@ -131,7 +131,7 @@ class QuaranTab extends StatelessWidget {
           color: MyThemeData.lightOrange,
         ),
         Text(
-          'Suras',
+          'Sura',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const Divider(

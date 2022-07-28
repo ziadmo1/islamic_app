@@ -23,7 +23,7 @@ class _HadethTabState extends State<HadethTab> {
           color: MyThemeData.lightOrange,
         ),
         Text(
-          'Hadeths',
+          'Hadeth',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const Divider(

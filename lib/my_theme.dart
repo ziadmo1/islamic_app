@@ -25,7 +25,7 @@ class MyThemeData {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.white,
-          selectedIconTheme: IconThemeData(size: 32)),
+          selectedIconTheme: IconThemeData(size: 35)),
       appBarTheme: const AppBarTheme(
           elevation: 0,
           centerTitle: true,

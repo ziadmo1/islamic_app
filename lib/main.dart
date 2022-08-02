@@ -7,19 +7,30 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic_app/providers/provider.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  runApp( ChangeNotifierProvider(
-      create: (context)=>AppConfigProvider(),
-      child: MyApp()));
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(ChangeNotifierProvider(
+      create: (context) => AppConfigProvider(), child: MyApp()));
+}
+
+late AppConfigProvider provider;
+void changePref() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  provider.changeLanguage(prefs.getString('lang') ?? 'en');
+  if (prefs.getString('theme') == 'light') {
+    provider.changeTheme(ThemeMode.light);
+  } else if (prefs.getString('theme') == 'dark') {
+    provider.changeTheme(ThemeMode.dark);
+  }
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    AppConfigProvider provider = Provider.of<AppConfigProvider>(context);
+    provider = Provider.of<AppConfigProvider>(context);
+    changePref();
     return MaterialApp(
       localizationsDelegates: [
         AppLocalizations.delegate, // Add this line

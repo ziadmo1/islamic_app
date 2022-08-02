@@ -5,7 +5,6 @@ import 'package:islamic_app/providers/provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class QuranDetails extends StatefulWidget {
   static const String routeName = 'quran';
 
@@ -24,10 +23,9 @@ class _QuranDetailsState extends State<QuranDetails> {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(provider.themeMode == ThemeMode.light?
-              'assets/images/back_ground.png':
-              'assets/images/back_ground_dark.png'
-              ))),
+              image: AssetImage(provider.themeMode == ThemeMode.light
+                  ? 'assets/images/back_ground.png'
+                  : 'assets/images/back_ground_dark.png'))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.app_title),
@@ -35,7 +33,9 @@ class _QuranDetailsState extends State<QuranDetails> {
         body: Container(
           margin: EdgeInsets.symmetric(vertical: 50, horizontal: 18),
           decoration: BoxDecoration(
-              color:provider.themeMode == ThemeMode.light? Colors.white : Theme.of(context).primaryColor,
+              color: provider.themeMode == ThemeMode.light
+                  ? Colors.white
+                  : Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(20)),
           child: Column(children: [
             Row(
@@ -62,9 +62,9 @@ class _QuranDetailsState extends State<QuranDetails> {
             ),
             Container(
               width: 250,
-              decoration:  BoxDecoration(
-                  border: Border.fromBorderSide(
-                      BorderSide(width: 1, color: Theme.of(context).dividerColor))),
+              decoration: BoxDecoration(
+                  border: Border.fromBorderSide(BorderSide(
+                      width: 1, color: Theme.of(context).dividerColor))),
             ),
             Expanded(
               child: ListView.builder(

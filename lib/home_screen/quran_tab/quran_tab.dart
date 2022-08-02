@@ -126,13 +126,13 @@ class QuaranTab extends StatelessWidget {
         Center(
           child: Image.asset('assets/images/islam.png'),
         ),
-         Divider(
+        Divider(
           thickness: 3,
         ),
         Text(
           AppLocalizations.of(context)!.sura,
         ),
-         Divider(
+        Divider(
           thickness: 3,
         ),
         Expanded(
@@ -152,7 +152,7 @@ class QuaranTab extends StatelessWidget {
             ),
             separatorBuilder: (context, index) => Container(
                 margin: const EdgeInsets.symmetric(horizontal: 50),
-                child:  Divider(
+                child: Divider(
                   thickness: 3,
                 )),
             itemCount: suras.length,

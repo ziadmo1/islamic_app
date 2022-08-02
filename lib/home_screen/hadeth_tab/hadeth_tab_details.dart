@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:islamic_app/home_screen/hadeth_tab/hadeth_details_design.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,10 +18,9 @@ class HadethTabDetails extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(provider.themeMode == ThemeMode.light?
-                'assets/images/back_ground.png':
-                'assets/images/back_ground_dark.png'
-                ))),
+                image: AssetImage(provider.themeMode == ThemeMode.light
+                    ? 'assets/images/back_ground.png'
+                    : 'assets/images/back_ground_dark.png'))),
         child: Scaffold(
             appBar: AppBar(
               title: Text(AppLocalizations.of(context)!.app_title),
@@ -27,7 +28,9 @@ class HadethTabDetails extends StatelessWidget {
             body: Container(
                 margin: EdgeInsets.symmetric(vertical: 50, horizontal: 18),
                 decoration: BoxDecoration(
-                    color:provider.themeMode == ThemeMode.light? Colors.white : Theme.of(context).primaryColor,
+                    color: provider.themeMode == ThemeMode.light
+                        ? Colors.white
+                        : Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(20)),
                 child: Column(children: [
                   Row(
@@ -43,7 +46,7 @@ class HadethTabDetails extends StatelessWidget {
                     width: 250,
                     decoration: BoxDecoration(
                         border: Border.fromBorderSide(BorderSide(
-                            width: 1, color:Theme.of(context).dividerColor))),
+                            width: 1, color: Theme.of(context).dividerColor))),
                   ),
                   Expanded(
                       child: ListView.builder(

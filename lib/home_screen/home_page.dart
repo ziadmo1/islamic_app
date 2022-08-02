@@ -18,7 +18,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
-  List<Widget> screens = [QuaranTab(), HadethTab(), SebhaTab(), RadioTab(),SettingTab()];
+  List<Widget> screens = [
+    QuaranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+    SettingTab()
+  ];
   @override
   Widget build(BuildContext context) {
     AppConfigProvider provider = Provider.of<AppConfigProvider>(context);
@@ -26,18 +32,16 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(
-                  provider.themeMode == ThemeMode.light?
-                  'assets/images/back_ground.png':
-                  'assets/images/back_ground_dark.png'
-              ))),
+              image: AssetImage(provider.themeMode == ThemeMode.light
+                  ? 'assets/images/back_ground.png'
+                  : 'assets/images/back_ground_dark.png'))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.app_title),
         ),
         bottomNavigationBar: Theme(
-          data:
-              Theme.of(context).copyWith(canvasColor: Theme.of(context).primaryColor),
+          data: Theme.of(context)
+              .copyWith(canvasColor: Theme.of(context).primaryColor),
           child: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {
@@ -46,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             },
             items: [
               BottomNavigationBarItem(
-                backgroundColor: Theme.of(context).backgroundColor,
+                  backgroundColor: Theme.of(context).backgroundColor,
                   icon: ImageIcon(AssetImage('assets/images/quran.png')),
                   label: AppLocalizations.of(context)!.quran_title),
               BottomNavigationBarItem(

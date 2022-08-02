@@ -5,22 +5,20 @@ class MyThemeData {
   static const Color lightYellow = Color(0xFFFACC1D);
   static const Color navyColor = Color(0xFF141A2E);
 
-
   static final ThemeData lightTheme = ThemeData(
-    backgroundColor: lightOrange,
-    primaryColor: lightOrange,
+      backgroundColor: lightOrange,
+      primaryColor: lightOrange,
       dividerColor: lightOrange,
       textTheme: TextTheme(
         bodyMedium: TextStyle(
             fontSize: 22, color: Colors.black, fontWeight: FontWeight.w500),
         displayMedium: TextStyle(
             fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
-        labelMedium:  TextStyle(
+        labelMedium: TextStyle(
             fontSize: 28, color: Colors.black, fontWeight: FontWeight.bold),
       ),
-      bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: Colors.transparent
-      ),
+      bottomSheetTheme:
+          BottomSheetThemeData(backgroundColor: Colors.transparent),
       scaffoldBackgroundColor: Colors.transparent,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.black,
@@ -44,13 +42,12 @@ class MyThemeData {
             fontSize: 22, color: Colors.white, fontWeight: FontWeight.w500),
         displayMedium: TextStyle(
             fontSize: 20, color: lightYellow, fontWeight: FontWeight.bold),
-        labelMedium:  TextStyle(
+        labelMedium: TextStyle(
             fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
       ),
       dividerColor: lightYellow,
-      bottomSheetTheme: BottomSheetThemeData(
-          backgroundColor: Colors.transparent
-      ),
+      bottomSheetTheme:
+          BottomSheetThemeData(backgroundColor: Colors.transparent),
       scaffoldBackgroundColor: Colors.transparent,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: lightYellow,

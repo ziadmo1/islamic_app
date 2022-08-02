@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/home_screen/quran_tab/quran_tab_details.dart';
-import 'package:islamic_app/my_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuaranTab extends StatelessWidget {
   List<String> suras = [
@@ -126,17 +126,14 @@ class QuaranTab extends StatelessWidget {
         Center(
           child: Image.asset('assets/images/islam.png'),
         ),
-        const Divider(
+        Divider(
           thickness: 3,
-          color: MyThemeData.lightOrange,
         ),
         Text(
-          'Sura',
-          style: Theme.of(context).textTheme.bodyMedium,
+          AppLocalizations.of(context)!.sura,
         ),
-        const Divider(
+        Divider(
           thickness: 3,
-          color: MyThemeData.lightOrange,
         ),
         Expanded(
           child: ListView.separated(
@@ -150,14 +147,13 @@ class QuaranTab extends StatelessWidget {
               child: Text(
                 suras[index],
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             separatorBuilder: (context, index) => Container(
                 margin: const EdgeInsets.symmetric(horizontal: 50),
-                child: const Divider(
+                child: Divider(
                   thickness: 3,
-                  color: MyThemeData.lightOrange,
                 )),
             itemCount: suras.length,
           ),

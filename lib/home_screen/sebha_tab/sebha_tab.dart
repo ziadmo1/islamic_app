@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/my_theme.dart';
 import 'package:islamic_app/providers/provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -30,6 +31,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   ? Image.asset('assets/images/head_sebha.png')
                   : Image.asset('assets/images/head_sebha_dark.png'),
               InkWell(
+                customBorder: CircleBorder(),
                 onTap: () {
                   rotate++;
                   onClickSebha();
@@ -48,8 +50,10 @@ class _SebhaTabState extends State<SebhaTab> {
           height: 50,
         ),
         Text(
-          'Number of tasbeh',
-          style: Theme.of(context).textTheme.bodyMedium,
+          AppLocalizations.of(context)!.tasbeh,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            fontWeight: FontWeight.bold
+          ),
         ),
         SizedBox(
           height: 25,

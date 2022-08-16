@@ -11,6 +11,7 @@ class SebhaTab extends StatefulWidget {
 
 class _SebhaTabState extends State<SebhaTab> {
   double rotate = 0;
+  int counter = 0;
   List<String> onSebha = [
     'سبحان الله',
     'الحمدلله',
@@ -34,6 +35,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 customBorder: CircleBorder(),
                 onTap: () {
                   rotate++;
+                  counter++;
                   onClickSebha();
                   setState(() {});
                 },
@@ -67,7 +69,7 @@ class _SebhaTabState extends State<SebhaTab> {
                     ? Color(0xCCC6B088)
                     : Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(12)),
-            child: Text(rotate.toString())),
+            child: Text(counter.toString())),
         SizedBox(
           height: 25,
         ),
@@ -93,28 +95,28 @@ class _SebhaTabState extends State<SebhaTab> {
 
   int index = 0;
   void onClickSebha() {
-    if (index == 0 && rotate >= 0) {
+    if (index == 0 && counter >= 0) {
       onSebha[0];
-      if (rotate >= 34) {
-        rotate = 0;
+      if (counter >= 34) {
+        counter = 0;
         index++;
       }
-    } else if (index == 1 && rotate >= 0) {
+    } else if (index == 1 && counter >= 0) {
       onSebha[1];
-      if (rotate >= 34) {
-        rotate = 0;
+      if (counter >= 34) {
+        counter = 0;
         index++;
       }
-    } else if (index == 2 && rotate >= 0) {
+    } else if (index == 2 && counter >= 0) {
       onSebha[2];
-      if (rotate >= 34) {
-        rotate = 0;
+      if (counter >= 34) {
+        counter = 0;
         index++;
       }
-    } else if (index == 3 && rotate >= 0) {
+    } else if (index == 3 && counter >= 0) {
       onSebha[3];
-      if (rotate >= 2) {
-        rotate = 0;
+      if (counter >= 2) {
+        counter = 0;
         index = 0;
       }
     }
